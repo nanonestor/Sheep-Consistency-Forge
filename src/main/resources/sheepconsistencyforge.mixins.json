@@ -3,7 +3,8 @@
   "package": "me.jsb.sheepconsistencyforge.mixin",
   "compatibilityLevel": "JAVA_17",
   "refmap": "sheepconsistencyforge.refmap.json",
-  "mixins": [
+  "mixins": [],
+  "client": [
     "SheepRendererMixin"
   ],
   "injectors": {

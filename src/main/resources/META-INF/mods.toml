@@ -1,28 +1,28 @@
 modLoader="javafml"
-loaderVersion="[40,)"
-license="MIT"
+loaderVersion="${loader_version_range}"
+license="${mod_license}"
 
 [[mods]]
-modId="sheepconsistencyforge"
-version="1.0"
-displayName="Sheep Consistency Forge"
-authors="Crupette, IMS21 & JSBOfficial"
+modId="${mod_id}"
+version="${mod_version}"
+displayName="${mod_name}"
+authors="${mod_authors}"
 logoFile="icon.png"
 displayURL="https://www.curseforge.com/minecraft/mc-mods/sheep-consistency-unofficial-forge-port"
 description="Makes the sheared variants of sheep match the colors they were dyed with. Based on bedrock version of sheep."
 
 [[dependencies.sheepconsistencyforge]]
-    modId="forge"
-    mandatory=true
-    versionRange="[40.0.3,)"
-    ordering="NONE"
-    side="CLIENT"
+modId="forge"
+mandatory=true
+versionRange="${forge_version_range}"
+ordering="NONE"
+side="CLIENT"
 [[dependencies.sheepconsistencyforge]]
-    modId="minecraft"
-    mandatory=true
+modId="minecraft"
+mandatory=true
 # This version range declares a minimum of the current minecraft version up to but not including the next major version
-    versionRange="[1.18.2,1.19)"
-    ordering="NONE"
-    side="CLIENT"
+versionRange="${minecraft_version_range}"
+ordering="NONE"
+side="CLIENT"
 [modproperties.sheepconsistencyforge]
-    catalogueItemIcon="icon.png" #Support for Catalogue mod
+catalogueItemIcon="icon.png" #Support for Catalogue mod
