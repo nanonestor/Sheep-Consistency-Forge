@@ -1,10 +1,10 @@
 modLoader="javafml"
-loaderVersion="[47,)"
+loaderVersion="[43,)"
 license="MIT"
 
 [[mods]]
 modId="sheepconsistencyforge"
-version="1.1"
+version="1.2"
 displayName="Sheep Consistency Forge"
 authors="Crupette, IMS21, SBOfficial, nanonestor"
 logoFile="icon.png"
@@ -14,14 +14,14 @@ description="Makes the sheared variants of sheep match the colors they were dyed
 [[dependencies.sheepconsistencyforge]]
     modId="forge"
     mandatory=true
-    versionRange="[47.1.3,48)"
+    versionRange="[43.2.0,44)"
     ordering="NONE"
     side="CLIENT"
 [[dependencies.sheepconsistencyforge]]
     modId="minecraft"
     mandatory=true
 # This version range declares a minimum of the current minecraft version up to but not including the next major version
-    versionRange="[1.20.1,1.20.2)"
+    versionRange="[1.19.2]"
     ordering="NONE"
     side="CLIENT"
 [modproperties.sheepconsistencyforge]
