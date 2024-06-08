@@ -24,7 +24,7 @@ public class SheepShearedLayer extends RenderLayer<Sheep, SheepModel<Sheep>> {
 	}
 
 	@Override
-	public void render(PoseStack matrixStack, MultiBufferSource vertexConsumerProvider, int i, Sheep sheepEntity,float f, float g, float h, float j, float k, float l) {
+	public void render(PoseStack matrixStack, MultiBufferSource vertexConsumerProvider, int i, Sheep sheepEntity, float f, float g, float h, float j, float k, float l) {
 		float v;
 		float w;
 		float x;
