@@ -13,10 +13,13 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.animal.Sheep;
 import net.minecraft.world.item.DyeColor;
 
+import org.jetbrains.annotations.NotNull;
+
+
 public class SheepShearedLayer extends RenderLayer<Sheep, SheepModel<Sheep>> {
 
 	private final SheepModel<Sheep> model;
-	private static final ResourceLocation SKIN = new ResourceLocation(SheepConsistencyForge.MODID,"textures/entity/sheep/sheep_sheared.png");
+	private static final ResourceLocation SKIN = ResourceLocation.fromNamespaceAndPath(SheepConsistencyForge.MODID,"textures/entity/sheep/sheep_sheared.png");
 
 	public SheepShearedLayer(RenderLayerParent<Sheep, SheepModel<Sheep>> context, EntityModelSet modelSet) {
 		super(context);
@@ -24,28 +27,34 @@ public class SheepShearedLayer extends RenderLayer<Sheep, SheepModel<Sheep>> {
 	}
 
 	@Override
-	public void render(PoseStack matrixStack, MultiBufferSource vertexConsumerProvider, int i, Sheep sheepEntity,float f, float g, float h, float j, float k, float l) {
-		float v;
-		float w;
-		float x;
+	public void render(@NotNull PoseStack matrixStack, @NotNull MultiBufferSource vertexConsumerProvider, int i, Sheep sheepEntity, float f, float g, float h, float j, float k, float l) {
+		int v;
+		//int w;
+		//int x;
 		if (sheepEntity.hasCustomName() && "jeb_".equals(sheepEntity.getName().getContents())) {
 			int n = sheepEntity.tickCount / 25 + sheepEntity.getId();
 			int o = DyeColor.values().length;
 			int p = n % o;
 			int q = (n + 1) % o;
-			float f3 = ((float) (sheepEntity.tickCount % 25) + h) / 25.0F;
-			float[] afloat1 = Sheep.getColorArray(DyeColor.byId(p));
-			float[] afloat2 = Sheep.getColorArray(DyeColor.byId(q));
-			v = afloat1[0] * (1.0F - f3) + afloat2[0] * f3;
-			w = afloat1[1] * (1.0F - f3) + afloat2[1] * f3;
-			x = afloat1[2] * (1.0F - f3) + afloat2[2] * f3;
+			int f3 = (int) (((float) (sheepEntity.tickCount % 25) + h) / 25.0F);
+
+			int color1int = Sheep.getColor(DyeColor.byId(p));
+			int color2int = Sheep.getColor(DyeColor.byId(q));
+
+			v = color1int * (1 - f3) + color2int * f3;
+		//	w = float1int * (1 - f3) + float2int * f3;
+		//	x = float1int * (1 - f3) + float2int * f3;
+
 		} else {
-			float[] afloat = Sheep.getColorArray(sheepEntity.getColor());
-			v = afloat[0];
-			w = afloat[1];
-			x = afloat[2];
+			int color_int = Sheep.getColor(sheepEntity.getColor());
+
+			v = color_int;
+		//	w = afloat_int;
+		//	x = afloat_int;
 		}
 		coloredCutoutModelCopyLayerRender(this.getParentModel(), this.model, SKIN, matrixStack, vertexConsumerProvider,
-				i, sheepEntity, f, g, j, k, l, h, v, w, x);
+				i, sheepEntity, f, g, j, k, l, h, v);
 	}
+
+
 }
